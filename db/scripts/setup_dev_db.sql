@@ -1,9 +1,9 @@
 drop database if exists crypto_dev_db;
-drop table if exists crypto_dev_data;
+drop table if exists crypto_data;
 
 create database crypto_dev_db;
 
-create table crypto_dev_data (
+create table crypto_data (
   id serial primary key,
   subreddit varchar(20) not null,
   active_users integer not null,
@@ -12,7 +12,7 @@ create table crypto_dev_data (
   timestamp numeric not null
 );
 
-copy crypto_dev_data (
+copy crypto_data (
   active_users,
   currency_sentiment, 
   subreddit, 
@@ -24,4 +24,4 @@ from '/Users/joshisaacson/Desktop/crypo-monitor/db/test_data/crypto_data_dev.csv
 delimiter ',' csv header;
 
 select *
-from crypto_dev_data;
+from crypto_data;
