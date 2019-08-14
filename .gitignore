@@ -125,4 +125,4 @@ dmypy.json
 
 .DS_Store
 .vscode/
-crypto_env/
+Venv/
